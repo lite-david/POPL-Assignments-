@@ -10,9 +10,7 @@ class LexGen{
 	char a[4];
 	
 	public: 
-
 	typedef vector<string>::iterator iterator;
-
 	LexGen(){
 		len = 1;
 		a[0] = 'a',a[1] = 'b',a[2] = 'c',a[3] = 'd';
@@ -34,7 +32,6 @@ class LexGen{
 
 	void genList(){
 		int tracker[len],i,j,flag=0,count=0;
-		lmark = len-2;
 		rmark = len-1;
 		string base;
 		for(i = 0;i<len;i++)
@@ -44,7 +41,6 @@ class LexGen{
 			for(i = 0;i<len;i++)
 				base += a[tracker[i]];
 			v.push_back(base);
-			
 			if(tracker[rmark] == 3){
 				while(tracker[rmark] == 3){
 					if(rmark)
@@ -74,15 +70,12 @@ class LexGen{
 	iterator end(){
 		return v.end();
 	}
-
 };
 
 int main(){
-
 	LexGen l(4);
 	LexGen::iterator it;
 	for(LexGen::iterator it = l.begin(); it!= l.end();++it)
 		cout << *it << endl;
-
 	return 0;
 }
