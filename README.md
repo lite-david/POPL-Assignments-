@@ -27,10 +27,11 @@ strings, the one returned by end() points beyond the end of the sequence of stri
 3. The iterator class itself should provide a dereferencing operator and an increment operator.
 The usage of this iterator should be:
 
-<code>LexGen l(3);
+``` C++
+LexGen l(3);
 for (LexGen::iterator it = l.begin(); it != l.end(); ++it)
-cout << *it << endl;
-</code>
+  cout << *it << endl;
+```
 
 Similarly, for the Java code: 
 1. The class should be such that new LexGen(len) creates an
@@ -40,7 +41,9 @@ length=len.
 hasMoreElements() and nextElement(), which test whether there are more elements in the sequence to be traversed and return the next element in the sequence if there are any, respectively.
 The usage would be:
 
-<code>LexGen l = new LexGen(3); Enumeration e = l.elements();
+```Java
+LexGen l = new LexGen(3);
+Enumeration e = l.elements();
 while (e.hasMoreElements())
-System.out.println(e.nextElement());
-</code>
+  System.out.println(e.nextElement());
+```
